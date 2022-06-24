@@ -10,21 +10,22 @@ on:
 
 jobs:
   build:
-    name: Build and deploy Gatsby site
+    name: Build Gatsby site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2.3.1
       - name: Install Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '13.x'
+          node-version: '16'
+          cache: 'npm'
       - name: Install Project Dependencies
         run: npm ci
       - name: Install Gatsby CLI
         run: npm install -g gatsby-cli@2.12.34
       - name: Build
-        run: gatsby build
+        run: gatsby build 
       - name: Verify build
         run: ls -la public
       - name: Upload public folder as Package
@@ -33,6 +34,7 @@ jobs:
           name: public-package
           path: public 
   deploy:
+    name: Deploy Gatsby site
     runs-on: ubuntu-latest
     needs: build
     steps:
