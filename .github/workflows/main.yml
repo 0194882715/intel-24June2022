@@ -31,6 +31,8 @@ jobs:
         run: gatsby build 
       - name: Verify build
         run: ls -la public
+      - name: npm audit build
+        run: npm audit
       - name: Upload public folder as Package
         uses: actions/upload-artifact@v3
         with:
