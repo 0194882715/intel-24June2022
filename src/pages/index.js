@@ -133,7 +133,7 @@ const IndexPage = () => {
       <h1 style={headingStyles}>
         Congratulations
         <br />
-        <span style={headingAccentStyles}>— Rachel's Gatsby site! </span>
+        <span style={headingAccentStyles}>Welcome to Rachel's Gatsby site! </span>
         <span role="img" aria-label="Party popper emojis">
           🎉🎉🎉
         </span>

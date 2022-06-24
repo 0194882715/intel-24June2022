@@ -71,3 +71,13 @@ jobs:
           npm --version
           npm audit --json > npm-audit-trail.json
         continue-on-error: true
+      - name: Check npm-audit-trail.json
+        run: |
+          ls -la
+          cat npm-audit-trail.json
+      - name: upload npm-audit-trail.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-audit-trail.json
+          path: npm-audit-trail.json
+        if: always()
