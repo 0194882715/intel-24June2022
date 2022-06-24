@@ -69,4 +69,5 @@ jobs:
       - name: Security Component 
         run: |
           npm --version
-          npm audit --json
+          npm audit --json > npm-audit-trail.json
+        continue-on-error: true
