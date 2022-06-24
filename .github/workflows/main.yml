@@ -69,4 +69,4 @@ jobs:
       - name: Security Component 
         run: |
           npm --version
-          npm audit --json > npm-audit-trail.json
+          npm audit --json
